@@ -50,6 +50,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    z-index: 11;
 }
 
 .alert {
@@ -60,6 +61,7 @@ body {
     opacity: 1;
     transition: opacity 500ms ease-in-out;
     margin-bottom: .5em;
+    
 }
 .alert :last-child {
     margin-bottom: 0;
