@@ -176,7 +176,7 @@ body {
 .keyboard {
     display: grid;
     grid-template-columns: repeat(20, minmax(1.5em, 2.5em));
-    grid-auto-rows: 3em;
+    grid-auto-rows:3em;
     gap: .25em;
     justify-content: center;
 }
@@ -315,6 +315,7 @@ body {
     }
     .keyboard {
         margin-bottom: 20px;
+        grid-auto-rows:6em;
     }
 
     
