@@ -314,7 +314,6 @@ body {
         grid-template-rows: repeat(6, 5.5em);
     }
     .keyboard {
-        margin-bottom: 20px;
         grid-auto-rows:6em;
     }
 
