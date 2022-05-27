@@ -12,6 +12,126 @@ body {
     min-height: 100vh;
     font-size: clamp(.5rem, 2.5vmin, 1.5rem);
 }
+
+#b-ordle {
+    color: white;
+    background-color: green;
+}
+
+/* instruction modal */
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    border: 1px solid white;
+    border-radius: 10px;
+    z-index: 21 ;
+    background-color: black;
+    color: #fff;
+    width: 700px;
+    max-width: 80%;
+    animation: ease-in-out;
+    transition: all 0.5s;
+}
+
+.modal.hide {
+    transform: translate(-50%, -50%) scale(0);
+
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.modal-header .title {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.modal-body {
+    padding: 10px 15px;
+}
+
+.overlay {
+    position: fixed;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 12;
+    background-color:rgba(0,0,0, 0.5);
+    pointer-events: all;
+}
+
+.overlay.hide {
+    opacity: 0;
+    pointer-events: none;  
+
+
+}
+
+p.instructions {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 20px;
+    line-height: 1.5em;
+}
+
+p.centered {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-tile {
+    border: 1px solid #fff;
+    padding: 5px;
+    margin: 3px;
+    font-weight: bold;
+    user-select: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game-tile.correct {
+    border: none;
+    background-color: hsl(115, 29%, 43%)
+}
+
+.game-tile.wrong{
+    border: none;
+    background-color: hsl(240, 2%, 23%);
+
+}
+
+.game-tile.wrong-location {
+    border: none;
+    background-color: hsl(49, 51%, 47%);
+}
+
+
 .btn-random {
     position: fixed;
     top:  0vh;
@@ -286,6 +406,11 @@ body {
     z-index: 9;
 
 }
+hr {
+    width:95%;
+    text-align:left;
+    margin-left:0
+}
 .hidden {
     transform: translateX(-100%);
 
@@ -317,6 +442,7 @@ body {
         grid-auto-rows:6em;
     }
 
+ 
     
 }
 .menu-container {
@@ -358,7 +484,6 @@ ul {
 }
 
 .btn-reveal {
-    margin-bottom: 10px;
     padding:10px 0 10px 0;
     cursor: pointer;
     width: 95%;

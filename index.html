@@ -10,23 +10,73 @@
     <title>Bordle | A Wordle clone</title>
 </head>
 <body>
-    <button tabindex="-21" class="hamburger" id="menu-btn">
+    <button class="hamburger" id="menu-btn">
         <span class="hamburger-top"></span>
         <span class="hamburger-mid"></span>
         <span class="hamburger-bot"></span>
     </button>
-    <div tabindex="-21"class="menu-section hidden" id="menu">
+
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title">How to play</div>
+            <button id="close-button" class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p class="instructions">Guess the <i>Correct Word</i> in six tries. <br>
+                Each guess must be a valid five-letter word. Hit the enter button to submit. <br>
+                After each guess, the color of the tiles will change to show how close your guess was to the word.
+                </p>
+    
+                <h4>Examples</h4>
+                <div class="row">
+                    <div class="game-tile correct">H</div>
+                    <div class="game-tile">O</div>
+                    <div class="game-tile">R</div>
+                    <div class="game-tile">S</div>
+                    <div class="game-tile">E</div>
+                </div>
+    
+                <p class="centered">The letter <strong>H</strong> is in the word and in the correct spot.</p> 
+    
+                <div class="row">
+                    <div class="game-tile">H</div>
+                    <div class="game-tile wrong-location">O</div>
+                    <div class="game-tile">R</div>
+                    <div class="game-tile">S</div>
+                    <div class="game-tile">E</div>
+                </div>
+    
+                <p class="centered">The letter <strong>O</strong> is in the word but in the wrong spot.</p>
+    
+                <div class="row">
+                    <div class="game-tile">H</div>
+                    <div class="game-tile">O</div>
+                    <div class="game-tile">R</div>
+                    <div class="game-tile">S</div>
+                    <div class="game-tile wrong">E</div>
+                </div>
+    
+                <p class="centered">The letter <strong>E</strong> is not in the word in any spot.</p>
+                
+                
+        </div>
+    </div>
+    <div id="over" class="overlay"></div>
+
+    <div class="menu-section hidden" id="menu">
         <div class="menu-container">
             <div class="title">
-                <h2 class="text-xl">Bordle | A Wordle clone </h2>
+                <h2 class="text-xl"><span id="b-ordle">B</span>ordle | A Wordle clone </h2>
                 <p class="text-md"></p>
             </div>
+            <hr >
             <ul class="nav-links">
-                <a href="https://www.nytimes.com/games/wordle/index.html"><li>Orginal Game</li></a>
-                <!-- add modals Instructions in start -->
-                <a href="#"><li>Instructions</li></a>
+                <button class="btn-reveal" id="how">How to play</button>
+                <hr>
                 <button class="btn-reveal" id="btn-reveals">Reveal Answer</button>
-                <a href="https://anthonyignacio.netlify.com"><li>Visit my portfolio</li></a>
+                <hr>
+                <a href="https://katastropeee.netlify.com"><li>Visit my portfolio</li></a>
+                <hr>
             </ul>
         </div>
     </div>

@@ -15300,12 +15300,19 @@ const msOffset = Date.now() - offsetFromDate
 const dayOffset = msOffset / 1000 / 60 / 60 / 24
 const btn = document.getElementById('menu-btn')
 const burger = document.getElementById('menu')
+
+const modal = document.getElementById('modal')
+const openModal = document.getElementById('how')
+const closeModal = document.getElementById('close-button')
+const overlay = document.getElementById('over')
+
 const random = Math.floor(Math.random() * (2315 - 0)) + 0;
 const reveal = document.getElementById("btn-reveals")
 const targetWord = targetWords[Math.floor(dayOffset)]
 
 
-startInteraction()
+
+
 
 function startInteraction() {
     document.addEventListener("click", handleMouseClick)
@@ -15478,6 +15485,23 @@ function danceTiles(tile) {
         }, (index * DANCE_ANIMATION_DURATION) / 5)
     })  
 }
+
+
+
+
+function modalHide() {
+  modal.classList.add('hide')
+  overlay.classList.add('hide')
+  startInteraction()
+}
+
+function modalOpen() {
+  modal.classList.remove('hide')
+  overlay.classList.remove('hide')
+}
+
+closeModal.addEventListener('click', modalHide)
+openModal.addEventListener('click', modalOpen)
 
 
 function navToggle() {
